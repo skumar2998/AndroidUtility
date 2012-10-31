@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/gpsInfoLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvForShowGpsinfo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/gps_info_hint" />
+
+        <Button
+            android:id="@+id/btnForGetGpsInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_text" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/timerMsgLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gpsInfoLayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvForShowTimer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/timer_info_hint" />
+
+        <Button
+            android:id="@+id/btnForTestTimer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_text_for_timer" />
+
+        <Button
+            android:id="@+id/btnRemoveTimer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_text_for_rm_timer" />
+
+    </LinearLayout>
+    
+</RelativeLayout>

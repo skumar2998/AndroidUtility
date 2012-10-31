@@ -2,4 +2,6 @@ AndroidUtility readme
 
 The MainActivity.java is using for lauching some hepler class to test. Maybe Junit will be added in the future.
 
-1, LocationHelper: Version0.1, To help you get gps info using android sdk API.
+1, LocationHelper: Version0.1, To help you to get gps info using android sdk API.
+2, TimerHelper: Version0.1, To help you to add timer easily. But there are some problems that the message posted to UI thread will block the timer message. So timer will be delayed. 
+

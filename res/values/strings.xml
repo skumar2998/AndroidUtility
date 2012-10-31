@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">AndroidUtility</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="gps_info_hint">这里显示gps信息</string>
+    <string name="button_text">获取GPS信息</string>
+    <string name="timer_info_hint">这里显示定时器信息</string>
+    <string name="button_text_for_timer">开始定时器</string>
+    <string name="button_text_for_rm_timer">移除定时器</string>
+
+</resources>
