@@ -1,0 +1,5 @@
+AndroidUtility readme
+
+The MainActivity.java is using for lauching some hepler class to test. Maybe Junit will be added in the future.
+
+1, LocationHelper: Version0.1, To help you get gps info using android sdk API.
