@@ -53,5 +53,21 @@
             android:text="@string/button_text_for_rm_timer" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/apnLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/timerMsgLayout"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnForAPN"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_text_for_apn" />
+
+    </LinearLayout>
     
 </RelativeLayout>

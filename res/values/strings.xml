@@ -9,5 +9,6 @@
     <string name="timer_info_hint">这里显示定时器信息</string>
     <string name="button_text_for_timer">开始定时器</string>
     <string name="button_text_for_rm_timer">移除定时器</string>
+    <string name="button_text_for_apn">基站定位</string>
 
 </resources>

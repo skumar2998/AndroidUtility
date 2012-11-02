@@ -3,7 +3,9 @@ package lgq.demo.androidutility;
 import java.util.NoSuchElementException;
 
 import lgq.demo.androidutility.LocationHelper.LocationListenerInterface;
+import lgq.demo.androidutility.LocationHelperV2.LocationHelperV2CallBack;
 import lgq.demo.androidutility.TimerHelper.CycleRunnable;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.Message;
 import android.app.Activity;
@@ -15,7 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements LocationListenerInterface {
+public class MainActivity extends Activity implements LocationListenerInterface
+	, LocationHelperV2CallBack {
 	private static final String TAG = "MainActivity";
 	
 	private MainActivityHandler mMainHandler = null;
@@ -77,6 +80,19 @@ public class MainActivity extends Activity implements LocationListenerInterface 
 				testTimerRmButtonClick(v);
 			}
 		});
+        
+        // ex3, 设置基站定位的按钮事件
+        Button btnForApn = (Button)findViewById(R.id.btnForAPN);
+        if (btnForApn == null) {
+        	throw new NoSuchElementException();
+        }
+        btnForApn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				apnButtonClick(v);
+			}
+		});
     }
     
     /**
@@ -129,6 +145,12 @@ public class MainActivity extends Activity implements LocationListenerInterface 
     	} else {
     		Log.w(TAG, "定时器辅助类为null，不许移除！");
     	}
+    }
+    
+    // ex3, 基站定位事件
+    private void apnButtonClick(View v) {
+    	LocationHelperV2 locationHelperV2 = new LocationHelperV2(this, this);
+    	locationHelperV2.execute((Void)null);
     }
 
     @Override
@@ -188,5 +210,19 @@ public class MainActivity extends Activity implements LocationListenerInterface 
 	
 	public void showInfo(String info) {
 		Toast.makeText(this, info, Toast.LENGTH_LONG).show();
+	}
+
+	@Override
+	public void onGetLocationSuccess(Location loc) {
+		// TODO Auto-generated method stub
+		Log.v(TAG, "调用onGetLocationSuccess，线程ID是：" + Thread.currentThread().getId() 
+				+ " name: " + Thread.currentThread().getName());
+		Log.v(TAG, "位置是：" + loc.toString());
+	}
+
+	@Override
+	public void onGetLocationFailue(int errCode) {
+		// TODO Auto-generated method stub
+		
 	}
 }
